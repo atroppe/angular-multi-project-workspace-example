@@ -35,7 +35,7 @@
               ]
             },
             "styles": [
-              "projects/web-app/src/theme.scss",
+              "projects/example-app/src/theme.scss",
               "projects/example-app/src/styles.scss"
             ],
             "scripts": []
