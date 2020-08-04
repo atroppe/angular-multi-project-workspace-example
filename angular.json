@@ -27,6 +27,13 @@
               "projects/example-app/src/favicon.ico",
               "projects/example-app/src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/shared-styles",
+                "node_modules/foundation-sites/scss",
+                "node_modules/foundation-sites/scss/util"
+              ]
+            },
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/example-app/src/styles.scss"
