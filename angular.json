@@ -180,7 +180,6 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "extractCss": true,
             "outputPath": "dist/shared-styling-app",
             "index": "projects/shared-styling-app/src/index.html",
             "main": "projects/shared-styling-app/src/main.ts",
