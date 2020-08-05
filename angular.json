@@ -34,10 +34,7 @@
                 "node_modules/foundation-sites/scss/util"
               ]
             },
-            "styles": [
-              "projects/example-app/src/theme.scss",
-              "projects/example-app/src/styles.scss"
-            ],
+            "styles": ["projects/shared-styles/styles.scss"],
             "scripts": []
           },
           "configurations": {
