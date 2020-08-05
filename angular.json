@@ -201,10 +201,7 @@
                 "node_modules/foundation-sites/scss/util"
               ]
             },
-            "styles": [
-              "projects/shared-styles/material-theme.scss",
-              "projects/shared-styles/styles.scss"
-            ],
+            "styles": ["projects/shared-styles/styles.scss"],
             "scripts": []
           },
           "configurations": {
