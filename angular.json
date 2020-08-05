@@ -196,14 +196,14 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "projects/shared-styling-app/src/styles",
+                "projects/shared-styles",
                 "node_modules/foundation-sites/scss",
                 "node_modules/foundation-sites/scss/util"
               ]
             },
             "styles": [
-              "projects/shared-styling-app/src/styles/material-theme.scss",
-              "projects/shared-styling-app/src/styles/styles.scss"
+              "projects/shared-styles/material-theme.scss",
+              "projects/shared-styles/styles.scss"
             ],
             "scripts": []
           },
