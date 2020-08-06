@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:elements": "ng build --prod --project elements-app --output-hashing none && npm run pack:elements && cp projects/elements-app/package.json dist/elements-app",
+    "pack:elements": "cat ./dist/elements-app/{runtime,polyfills,main}-es5.js > dist/elements-app/elements.js && ls -lah dist/elements-app/elements.js",
+    "build:ui-library": "ng build --prod --project ui-library"
   },
   "private": true,
   "dependencies": {
