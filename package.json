@@ -7,7 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:elements": "ng build --prod --project elements-app --output-hashing none && npm run pack:elements && cp projects/elements-app/package.json dist/elements-app",
+    "pack:elements": "cat ./dist/elements-app/{runtime,polyfills,main}-es5.js > dist/elements-app/elements.js && ls -lah dist/elements-app/elements.js",
+    "build:ui-library": "ng build --prod --project ui-library"
   },
   "private": true,
   "dependencies": {
@@ -16,11 +19,14 @@
     "@angular/common": "~9.1.9",
     "@angular/compiler": "~9.1.9",
     "@angular/core": "~9.1.9",
+    "@angular/elements": "^9.1.12",
     "@angular/forms": "~9.1.9",
     "@angular/material": "^9.2.4",
     "@angular/platform-browser": "~9.1.9",
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
+    "document-register-element": "^1.7.2",
+    "foundation-sites": "^6.6.3",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -43,6 +49,11 @@
     "karma-jasmine-html-reporter": "^1.4.2",
     "ng-packagr": "^9.0.0",
     "protractor": "~7.0.0",
+    "stylelint": "^13.6.1",
+    "stylelint-config-sass-guidelines": "^7.0.0",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-selector-bem-pattern": "^2.1.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.8.3"

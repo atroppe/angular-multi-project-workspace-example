@@ -34,10 +34,7 @@
                 "node_modules/foundation-sites/scss/util"
               ]
             },
-            "styles": [
-              "projects/example-app/src/theme.scss",
-              "projects/example-app/src/styles.scss"
-            ],
+            "styles": ["projects/shared-styles/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -165,6 +162,249 @@
               "projects/ui-library/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    },
+    "shared-styling-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/shared-styling-app",
+      "sourceRoot": "projects/shared-styling-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/shared-styling-app",
+            "index": "projects/shared-styling-app/src/index.html",
+            "main": "projects/shared-styling-app/src/main.ts",
+            "polyfills": "projects/shared-styling-app/src/polyfills.ts",
+            "tsConfig": "projects/shared-styling-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/shared-styling-app/src/favicon.ico",
+              "projects/shared-styling-app/src/assets"
+            ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "projects/shared-styles",
+                "node_modules/foundation-sites/scss",
+                "node_modules/foundation-sites/scss/util"
+              ]
+            },
+            "styles": ["projects/shared-styles/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/shared-styling-app/src/environments/environment.ts",
+                  "with": "projects/shared-styling-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "shared-styling-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "shared-styling-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "shared-styling-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/shared-styling-app/src/test.ts",
+            "polyfills": "projects/shared-styling-app/src/polyfills.ts",
+            "tsConfig": "projects/shared-styling-app/tsconfig.spec.json",
+            "karmaConfig": "projects/shared-styling-app/karma.conf.js",
+            "assets": [
+              "projects/shared-styling-app/src/favicon.ico",
+              "projects/shared-styling-app/src/assets"
+            ],
+            "styles": ["projects/shared-styling-app/src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/shared-styling-app/tsconfig.app.json",
+              "projects/shared-styling-app/tsconfig.spec.json",
+              "projects/shared-styling-app/e2e/tsconfig.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/shared-styling-app/e2e/protractor.conf.js",
+            "devServerTarget": "shared-styling-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "shared-styling-app:serve:production"
+            }
+          }
+        }
+      }
+    },
+    "elements-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/elements-app",
+      "sourceRoot": "projects/elements-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/elements-app",
+            "index": "projects/elements-app/src/index.html",
+            "main": "projects/elements-app/src/main.ts",
+            "polyfills": "projects/elements-app/src/polyfills.ts",
+            "tsConfig": "projects/elements-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/elements-app/src/favicon.ico",
+              "projects/elements-app/src/assets"
+            ],
+            "styles": [
+              "projects/elements-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/elements-app/src/environments/environment.ts",
+                  "with": "projects/elements-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "elements-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "elements-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "elements-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/elements-app/src/test.ts",
+            "polyfills": "projects/elements-app/src/polyfills.ts",
+            "tsConfig": "projects/elements-app/tsconfig.spec.json",
+            "karmaConfig": "projects/elements-app/karma.conf.js",
+            "assets": [
+              "projects/elements-app/src/favicon.ico",
+              "projects/elements-app/src/assets"
+            ],
+            "styles": [
+              "projects/elements-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/elements-app/tsconfig.app.json",
+              "projects/elements-app/tsconfig.spec.json",
+              "projects/elements-app/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/elements-app/e2e/protractor.conf.js",
+            "devServerTarget": "elements-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "elements-app:serve:production"
+            }
           }
         }
       }

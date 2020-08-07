@@ -3,18 +3,15 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'lib-ui-library',
   template: `
+    <h1>wat</h1>
     <p>
-      ui-library works!
+      ui-library works! change name to ui-components?
     </p>
   `,
-  styles: [
-  ]
+  styles: [],
 })
 export class UiLibraryComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
