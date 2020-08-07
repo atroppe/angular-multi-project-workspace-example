@@ -1,6 +1,15 @@
-# AscoWorkspace
+# Workspace Example
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.7.
+
+The workspace utilizes a single configuration for multiple applications and libraries.
+It is configured to utilize a shared folder `projects/shared-styles` for global styles across all applications.
+
+Also contains:
+- `elements-app` : a light module for generating angular elements
+- `ui-library` :  currently a single library, will be updated to contain an angular library for each custom component
+- 2 example applications for testing Ui Library imports and global theme
+- base level index.html file for testing angular element exports (work-in-progress)
 
 ## Development server
 
