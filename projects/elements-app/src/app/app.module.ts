@@ -1,19 +1,24 @@
 import { Injector, NgModule } from '@angular/core';
 import { createCustomElement } from '@angular/elements';
 import { BrowserModule } from '@angular/platform-browser';
+import { HeaderModule } from 'projects/components-library/header/src/lib/header.module';
+import { HeaderComponent } from 'projects/components-library/header/src/public-api';
 import { UiLibraryComponent, UiLibraryModule } from 'projects/ui-library/src/public-api';
 
 @NgModule({
   declarations: [],
-  imports: [BrowserModule, UiLibraryModule],
+  imports: [BrowserModule, UiLibraryModule, HeaderModule],
   providers: [],
 })
 export class AppModule {
   constructor(private injector: Injector) {}
 
   ngDoBootstrap() {
-    const element = createCustomElement(UiLibraryComponent, { injector: this.injector });
-    customElements.define('lib-components', element);
+    const componentArray = [UiLibraryComponent, HeaderComponent];
+    componentArray.forEach((comp) => {
+      const element = createCustomElement(comp, { injector: this.injector });
+      customElements.define('lib-components', element);
+    });
   }
 }
 
