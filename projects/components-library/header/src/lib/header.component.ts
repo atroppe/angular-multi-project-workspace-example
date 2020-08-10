@@ -2,19 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-header',
-  template: `
-    <p>
-      header works!
-    </p>
-  `,
-  styles: [
-  ]
+  template: ` <lib-nav></lib-nav> `,
+  styles: [],
 })
 export class HeaderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
