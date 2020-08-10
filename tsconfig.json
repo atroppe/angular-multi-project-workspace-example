@@ -23,6 +23,10 @@
       "header": [
         "dist/header/header",
         "dist/header"
+      ],
+      "dialog-trigger": [
+        "dist/dialog-trigger/dialog-trigger",
+        "dist/dialog-trigger"
       ]
     }
   },

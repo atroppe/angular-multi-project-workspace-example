@@ -428,6 +428,46 @@
           }
         }
       }
+    },
+    "dialog-trigger": {
+      "projectType": "library",
+      "root": "projects/dialog-trigger",
+      "sourceRoot": "projects/dialog-trigger/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dialog-trigger/tsconfig.lib.json",
+            "project": "projects/dialog-trigger/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/dialog-trigger/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dialog-trigger/src/test.ts",
+            "tsConfig": "projects/dialog-trigger/tsconfig.spec.json",
+            "karmaConfig": "projects/dialog-trigger/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dialog-trigger/tsconfig.lib.json",
+              "projects/dialog-trigger/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "example-app"
