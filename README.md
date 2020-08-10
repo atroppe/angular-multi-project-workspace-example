@@ -6,10 +6,20 @@ The workspace utilizes a single configuration for multiple applications and libr
 It is configured to utilize a shared folder `projects/shared-styles` for global styles across all applications.
 
 Also contains:
+
 - `elements-app` : a light module for generating angular elements
-- `ui-library` :  currently a single library, will be updated to contain an angular library for each custom component
+<!-- - `ui-library` : currently a single library, will be updated to contain an angular library for each custom component -->
+- `components-library` folder which can host all the custom component libraries
 - 2 example applications for testing Ui Library imports and global theme
 - base level index.html file for testing angular element exports (work-in-progress)
+
+### Running the projects
+
+update angular.json `defaultProject` to the app or library you want to work with and then use ng commands as usual
+(ng serve, ng g c <comp-name>)
+
+(WIP) Build angular elements by running the custom script `npm run build:elements`
+(WIP) Elements are imported to the index.html file and can be tested by installing https://www.npmjs.com/package/serve and running `serve .`
 
 ## Development server
 

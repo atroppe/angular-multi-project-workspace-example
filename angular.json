@@ -23,10 +23,7 @@
             "polyfills": "projects/example-app/src/polyfills.ts",
             "tsConfig": "projects/example-app/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "projects/example-app/src/favicon.ico",
-              "projects/example-app/src/assets"
-            ],
+            "assets": ["projects/example-app/src/favicon.ico", "projects/example-app/src/assets"],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "projects/shared-styles",
@@ -92,10 +89,7 @@
             "polyfills": "projects/example-app/src/polyfills.ts",
             "tsConfig": "projects/example-app/tsconfig.spec.json",
             "karmaConfig": "projects/example-app/karma.conf.js",
-            "assets": [
-              "projects/example-app/src/favicon.ico",
-              "projects/example-app/src/assets"
-            ],
+            "assets": ["projects/example-app/src/favicon.ico", "projects/example-app/src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "projects/example-app/src/styles.scss"
@@ -308,13 +302,8 @@
             "polyfills": "projects/elements-app/src/polyfills.ts",
             "tsConfig": "projects/elements-app/tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "projects/elements-app/src/favicon.ico",
-              "projects/elements-app/src/assets"
-            ],
-            "styles": [
-              "projects/elements-app/src/styles.scss"
-            ],
+            "assets": ["projects/elements-app/src/favicon.ico", "projects/elements-app/src/assets"],
+            "styles": ["projects/elements-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -372,13 +361,8 @@
             "polyfills": "projects/elements-app/src/polyfills.ts",
             "tsConfig": "projects/elements-app/tsconfig.spec.json",
             "karmaConfig": "projects/elements-app/karma.conf.js",
-            "assets": [
-              "projects/elements-app/src/favicon.ico",
-              "projects/elements-app/src/assets"
-            ],
-            "styles": [
-              "projects/elements-app/src/styles.scss"
-            ],
+            "assets": ["projects/elements-app/src/favicon.ico", "projects/elements-app/src/assets"],
+            "styles": ["projects/elements-app/src/styles.scss"],
             "scripts": []
           }
         },
@@ -390,9 +374,7 @@
               "projects/elements-app/tsconfig.spec.json",
               "projects/elements-app/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -405,6 +387,44 @@
             "production": {
               "devServerTarget": "elements-app:serve:production"
             }
+          }
+        }
+      }
+    },
+    "header": {
+      "projectType": "library",
+      "root": "projects/components-library/header",
+      "sourceRoot": "projects/components-library/header/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/components-library/header/tsconfig.lib.json",
+            "project": "projects/components-library/header/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/components-library/header/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/components-library/header/src/test.ts",
+            "tsConfig": "projects/components-library/header/tsconfig.spec.json",
+            "karmaConfig": "projects/components-library/header/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/components-library/header/tsconfig.lib.json",
+              "projects/components-library/header/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
