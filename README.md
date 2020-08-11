@@ -30,6 +30,8 @@ CREATE projects/dialog-trigger/src/lib/dialog-content/dialog-content.component.t
 UPDATE projects/dialog-trigger/src/lib/dialog-trigger.module.ts (370 bytes)
 ```
 
+however, ng cli commands cant find the right ngModule if its not directly under the projects folder. (library can be moved later, or add to the library ngModule manually)
+
 (WIP) Build angular elements by running the custom script `npm run build:elements`
 (WIP) Elements are imported to the index.html file and can be tested by installing https://www.npmjs.com/package/serve and running `serve .`
 
