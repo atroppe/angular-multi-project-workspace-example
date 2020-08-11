@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'lib-header',
-  template: ` <lib-nav></lib-nav> `,
+  template: ` <lib-navigation></lib-navigation> `,
   styles: [],
 })
 export class HeaderComponent implements OnInit {
